@@ -26,7 +26,26 @@
 
     <!-- jQuery script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <title>SourcedAgile</title>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+      }
+      #a,
+      #b {
+        color: white;
+        padding: 100px;
+      }
+    </style>
   </head>
   <body>
     <!--Navbar-->
@@ -89,11 +108,35 @@
 
     <!-- Cards -->
     <div class="container-fluid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <marker
+            id="arrowhead"
+            viewBox="0 0 10 10"
+            refX="3"
+            refY="5"
+            markerWidth="6"
+            markerHeight="6"
+            orient="auto"
+          >
+            <path d="M 0 0 L 10 5 L 0 10 z" />
+          </marker>
+        </defs>
+        <g
+          fill="none"
+          stroke="black"
+          stroke-width="2"
+          marker-end="url(#arrowhead)"
+        >
+          <path id="arrowLeft" />
+          <path id="arrowRight" />
+        </g>
+      </svg>
       <div
         class="d-flex justify-content-around flex-wrap row row-cols-6 g-3 mt-2 mb-2"
       >
         <div class="col-md-2 col-sm-12 mb-4">
-          <div class="p-2 bg-light card">
+          <div id="from_div" class="p-2 bg-light card">
             <div class="bg-secondary rounded shadow-sm bg-white rounded">
               <img src="background-image.jpg" class="p-2 w-100 h-100" />
             </div>
@@ -117,7 +160,7 @@
           </div>
         </div>
         <div class="col-md-2 col-sm-12">
-          <div class="p-2 bg-light card">
+          <div id="to_div" class="p-2 bg-light card">
             <div class="bg-secondary rounded shadow-sm bg-white rounded">
               <img src="background-image.jpg" class="p-2 w-100 h-100" />
             </div>
@@ -526,5 +569,6 @@
         </div>
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
